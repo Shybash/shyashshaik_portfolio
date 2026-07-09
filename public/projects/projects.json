@@ -1,0 +1,32 @@
+[
+  {
+    "name": "AI Resume Screening Agent",
+    "desc": "A multi-agent recruiter screening system that automatically parses, analyzes, and ranks resumes against a Job Description. Built with LangGraph, Gemini API, FastAPI, PostgreSQL, and ChromaDB. Features resume ranking, skill gap analysis, custom interview question generation, and recruiter dashboard.",
+    "image": "ai_resume_screening",
+    "category": "agentic",
+    "links": {
+      "view": "https://github.com/Shybash",
+      "code": "https://github.com/Shybash"
+    }
+  },
+  {
+    "name": "Dynamic Documentation Platform",
+    "desc": "A real-time collaborative documentation platform using React.js, Node.js, and Socket.io. Features WebSocket-based real-time document synchronization, rich text editing capabilities, and secure document sharing with Role-Based Access Control (RBAC).",
+    "image": "dynamic_docs",
+    "category": "mern",
+    "links": {
+      "view": "https://github.com/Shybash",
+      "code": "https://github.com/Shybash"
+    }
+  },
+  {
+    "name": "Club Hub",
+    "desc": "A comprehensive club management platform developed using the MERN stack. Built robust RESTful APIs for event creation and member registration, and implemented secure user authentication and authorization using OAuth 2.0 and JWT tokens.",
+    "image": "club_hub",
+    "category": "mern",
+    "links": {
+      "view": "https://github.com/Shybash",
+      "code": "https://github.com/Shybash"
+    }
+  }
+]
