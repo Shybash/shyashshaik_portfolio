@@ -58,7 +58,7 @@ export default function Hero() {
   };
 
   return (
-    <section className="relative min-h-screen flex flex-col justify-center items-center py-24 px-4 md:px-8 overflow-hidden border-b border-border-subtle bg-transparent">
+    <section id="home" className="relative min-h-screen flex flex-col justify-center items-center py-24 px-4 md:px-8 overflow-hidden border-b border-border-subtle bg-transparent">
       {/* Grid Pattern */}
       <div className="absolute inset-0 grid-bg-pattern pointer-events-none opacity-20 z-0" />
       
@@ -160,7 +160,7 @@ export default function Hero() {
         <Tilt className="lg:col-span-5 relative w-full flex flex-col">
           <div className="w-full bg-[#09090b]/80 border border-border-subtle rounded-xl p-5 shadow-2xl backdrop-blur-md overflow-hidden spotlight-card flex flex-col min-h-[380px] h-full">
             {/* Tab Selector Bar */}
-            <div className="flex justify-between items-center pb-3 mb-4 border-b border-zinc-900 font-mono text-[10px] text-zinc-550 z-10 relative">
+            <div className="flex justify-between items-center pb-3 mb-4 border-b border-zinc-900 font-mono text-[10px] text-zinc-500 z-10 relative">
               <div className="flex space-x-2">
                 <button 
                   onClick={() => { setActiveTab("json"); setRunState("idle"); }}
@@ -185,7 +185,7 @@ export default function Hero() {
             </div>
 
             {/* Code Editor Body */}
-            <div className="flex-grow font-mono text-xs md:text-sm text-zinc-350 text-left space-y-1.5 z-10 relative bg-black/40 p-4 rounded-lg border border-zinc-950/80 overflow-y-auto max-h-[250px]">
+            <div className="flex-grow font-mono text-xs md:text-sm text-zinc-300 text-left space-y-1.5 z-10 relative bg-black/40 p-4 rounded-lg border border-zinc-950/80 overflow-y-auto max-h-[250px]">
               {activeTab === "json" && (
                 <>
                   <div><span className="text-zinc-500">{"{"}</span></div>
@@ -236,7 +236,7 @@ export default function Hero() {
                   <div className="pl-8"><span className="text-indigo-400">networking</span><span className="text-zinc-500">:</span></div>
                   <div className="pl-12"><span className="text-indigo-400">cdn</span><span className="text-zinc-500">:</span> <span className="text-emerald-400">CloudFront</span></div>
                   <div className="pl-12"><span className="text-indigo-400">storage</span><span className="text-zinc-500">:</span> <span className="text-emerald-400">S3 Static Assets</span></div>
-                </                >
+                </>
               )}
             </div>
 
@@ -275,7 +275,7 @@ export default function Hero() {
               )}
 
               {runState === "idle" && (
-                <span className="font-mono text-[9px] text-zinc-650">Compiler Ready.</span>
+                <span className="font-mono text-[9px] text-zinc-600">Compiler Ready.</span>
               )}
             </div>
           </div>

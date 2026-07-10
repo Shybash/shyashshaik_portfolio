@@ -1,20 +1,20 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
-import Script from "next/script";
+import React, { useEffect } from "react";
+import { motion } from "framer-motion";
+import { Briefcase, Server, ArrowLeft } from "lucide-react";
 import Link from "next/link";
-import "./experience.css";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
+import ParticlesBackground from "@/components/ParticlesBackground";
 
 export default function ExperiencePage() {
-  const [menuActive, setMenuActive] = useState(false);
-  const [srLoaded, setSrLoaded] = useState(false);
-
   // Visibility change tab title handler
   useEffect(() => {
     const handleVisibilityChange = () => {
       const favicon = document.getElementById("favicon") as HTMLLinkElement;
       if (document.visibilityState === "visible") {
-        document.title = "Experience | Portfolio Shaik Shybash";
+        document.title = "Experience | Shaik Shybash";
         if (favicon) favicon.href = "/assets/images/favicon.png";
       } else {
         document.title = "Come Back To Portfolio";
@@ -27,222 +27,125 @@ export default function ExperiencePage() {
     };
   }, []);
 
-  // Scroll top visibility
-  useEffect(() => {
-    const handleScroll = () => {
-      const scrollTopBtn = document.getElementById("scroll-top");
-      if (scrollTopBtn) {
-        if (window.scrollY > 60) {
-          scrollTopBtn.classList.add("active");
-        } else {
-          scrollTopBtn.classList.remove("active");
-        }
-      }
-    };
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
-  // Live Chat Tawk.to
-  useEffect(() => {
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    (window as any).Tawk_API = (window as any).Tawk_API || {};
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    (window as any).Tawk_LoadStart = new Date();
-    (function () {
-      const s1 = document.createElement("script");
-      const s0 = document.getElementsByTagName("script")[0];
-      s1.async = true;
-      s1.src = "https://embed.tawk.to/60df10bf7f4b000ac03ab6a8/1f9jlirg6";
-      s1.charset = "UTF-8";
-      s1.setAttribute("crossorigin", "*");
-      if (s0 && s0.parentNode) {
-        s0.parentNode.insertBefore(s1, s0);
-      } else {
-        document.head.appendChild(s1);
-      }
-    })();
-  }, []);
-
-  // ScrollReveal initialization
-  useEffect(() => {
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    if (srLoaded && typeof window !== "undefined" && (window as any).ScrollReveal) {
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      const srtop = (window as any).ScrollReveal({
-        origin: "top",
-        distance: "80px",
-        duration: 1000,
-        reset: true,
-      });
-
-      srtop.reveal(".experience .timeline", { delay: 400 });
-      srtop.reveal(".experience .timeline .container", { interval: 400 });
-    }
-  }, [srLoaded]);
+  const experiences = [
+    {
+      role: "Associate Software Engineer",
+      company: "Minfy Technologies, Hyderabad",
+      period: "Oct 2025 – Present",
+      type: "Full-Time",
+      icon: <Server className="h-5 w-5 text-blue-400" />,
+      points: [
+        "Develop and maintain scalable microservices using Node.js, Express.js, and AWS",
+        "Collaborate with cross-functional teams to deliver features using Agile methodologies",
+        "Implement RESTful APIs following industry best practices, improving maintainability",
+        "Participate in code reviews and contribute to team knowledge sharing, enhancing code quality",
+      ],
+    },
+    {
+      role: "Software Development Intern",
+      company: "Minfy Technologies, Hyderabad",
+      period: "Apr 2025 – Sep 2025",
+      type: "Internship",
+      icon: <Briefcase className="h-5 w-5 text-purple-400" />,
+      points: [
+        "Built modular web applications using JavaScript, Node.js, and Express.js",
+        "Participated in daily stand-ups, sprint planning, and retrospectives following Scrum methodology",
+        "Contributed to code reviews and technical documentation, improving productivity by 15%",
+      ],
+    },
+  ];
 
   return (
-    <>
-      <Script src="https://unpkg.com/scrollreveal" onLoad={() => setSrLoaded(true)} />
+    <div className="relative min-h-screen overflow-x-hidden">
+      <ParticlesBackground />
+      <Navbar />
 
-      {/* navbar starts */}
-      <header>
-        <Link href="/" className="logo">
-          <i className="fab fa-node-js"></i> Shybash
-        </Link>
+      <main className="pt-24 pb-16">
+        <section className="py-16 px-4 md:px-8 relative">
+          <div className="absolute inset-0 grid-bg-pattern opacity-10 pointer-events-none" />
 
-        <div
-          id="menu"
-          className={`fas ${menuActive ? "fa-times" : "fa-bars"}`}
-          onClick={() => setMenuActive(!menuActive)}
-        ></div>
-        <nav className={`navbar ${menuActive ? "nav-toggle" : ""}`}>
-          <ul>
-            <li>
-              <Link href="/#home" onClick={() => setMenuActive(false)}>Home</Link>
-            </li>
-            <li>
-              <Link href="/#about" onClick={() => setMenuActive(false)}>About</Link>
-            </li>
-            <li>
-              <Link href="/#skills" onClick={() => setMenuActive(false)}>Skills</Link>
-            </li>
-            <li>
-              <Link href="/#education" onClick={() => setMenuActive(false)}>Education</Link>
-            </li>
-            <li>
-              <Link href="/#work" onClick={() => setMenuActive(false)}>Work</Link>
-            </li>
-            <li>
-              <Link className="active" href="/#experience" onClick={() => setMenuActive(false)}>Experience</Link>
-            </li>
-            <li>
-              <Link href="/#contact" onClick={() => setMenuActive(false)}>Contact</Link>
-            </li>
-          </ul>
-        </nav>
-      </header>
-      {/* navbar ends */}
+          <div className="max-w-4xl w-full mx-auto relative z-10">
+            {/* Header */}
+            <div className="flex flex-col space-y-2 mb-16 text-left">
+              <span className="font-mono text-xs text-blue-400 tracking-widest uppercase">
+                {"// PROFESSIONAL HISTORY"}
+              </span>
+              <h1 className="text-3xl md:text-4xl font-extrabold text-white">
+                Experience Timeline
+              </h1>
+              <div className="h-1 w-20 bg-blue-500 rounded-full mt-2" />
+              <p className="text-zinc-400 text-sm font-sans mt-4 max-w-lg italic">
+                &quot;Every experience in your life is being orchestrated to
+                teach you something you need to know to move forward.&quot;
+              </p>
+            </div>
 
-      {/* experience section starts */}
-      <section className="experience" id="experience">
-        <h2 className="heading">
-          <i className="fas fa-briefcase"></i> Experience
-        </h2>
-        <div className="quote">
-          <span>
-            every experience in your life is being orchestrated to teach you something you need to know to move forward.
-          </span>
-        </div>
+            {/* Timeline */}
+            <div className="relative border-l border-zinc-800 ml-4 md:ml-8 pl-8 md:pl-12 space-y-12 text-left">
+              {experiences.map((exp, idx) => (
+                <div key={idx} className="relative">
+                  {/* Timeline dot */}
+                  <div className="absolute -left-[50px] md:-left-[66px] top-1.5 bg-zinc-950/80 p-2 rounded-full border border-white/5 shadow-[0_0_10px_rgba(59,130,246,0.1)] z-10 backdrop-blur-sm">
+                    {exp.icon}
+                  </div>
 
-        <div className="timeline">
-          <div className="container right">
-            <div className="content">
-              <div className="tag">
-                <h2>Minfy Technologies</h2>
-              </div>
-              <div className="desc">
-                <h3>Associate Software Engineer</h3>
-                <p>Oct 2025 - Present</p>
-                <ul style={{ marginTop: "10px", paddingLeft: "15px", fontSize: "1.4rem", textAlign: "left", lineHeight: "1.6" }}>
-                  <li>Develop and maintain scalable microservices using Node.js, Express.js, and AWS</li>
-                  <li>Collaborate with cross-functional teams to deliver features using Agile methodologies</li>
-                  <li>Implement RESTful APIs following industry best practices, improving maintainability</li>
-                  <li>Participate in code reviews and contribute to team knowledge sharing, enhancing code quality</li>
-                </ul>
-              </div>
+                  {/* Card */}
+                  <motion.div
+                    initial={{ opacity: 0, y: 10 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5, delay: idx * 0.1 }}
+                    className="bg-[#0d0d12]/50 border border-white/5 p-6 md:p-8 rounded-xl shadow-lg relative overflow-hidden backdrop-blur-md"
+                  >
+                    <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-2 mb-6 border-b border-white/5 pb-4">
+                      <div>
+                        <h3 className="text-xl font-bold text-white font-sans">
+                          {exp.role}
+                        </h3>
+                        <span className="font-mono text-xs text-zinc-400">
+                          {exp.company}
+                        </span>
+                      </div>
+                      <div className="flex items-center space-x-2.5">
+                        <span className="font-mono text-[9px] bg-zinc-950/60 border border-white/5 text-zinc-400 px-2.5 py-1 rounded font-bold">
+                          {exp.period}
+                        </span>
+                        <span className="font-mono text-[9px] bg-blue-900/20 border border-blue-900/30 text-blue-400 px-2.5 py-1 rounded font-bold uppercase tracking-wider">
+                          {exp.type}
+                        </span>
+                      </div>
+                    </div>
+
+                    <ul className="space-y-4 font-sans text-sm text-zinc-400">
+                      {exp.points.map((pt, i) => (
+                        <li key={i} className="flex items-start space-x-3">
+                          <span className="h-1.5 w-1.5 rounded-full bg-blue-400 mt-2 shrink-0 animate-pulse" />
+                          <span className="leading-relaxed text-zinc-300">
+                            {pt}
+                          </span>
+                        </li>
+                      ))}
+                    </ul>
+                  </motion.div>
+                </div>
+              ))}
+            </div>
+
+            {/* Back Button */}
+            <div className="mt-12 flex justify-center">
+              <Link
+                href="/#experience"
+                className="inline-flex items-center space-x-2 px-5 py-3 bg-zinc-950/60 border border-white/5 text-zinc-300 hover:text-white hover:bg-zinc-900/40 hover:border-white/10 rounded-lg transition-all font-mono text-xs"
+              >
+                <ArrowLeft className="h-4 w-4" />
+                <span>Back to Home</span>
+              </Link>
             </div>
           </div>
+        </section>
+      </main>
 
-          <div className="container left">
-            <div className="content">
-              <div className="tag">
-                <h2>Minfy Technologies</h2>
-              </div>
-              <div className="desc">
-                <h3>Software Development Intern</h3>
-                <p>Apr 2025 - Sep 2025</p>
-                <ul style={{ marginTop: "10px", paddingLeft: "15px", fontSize: "1.4rem", textAlign: "left", lineHeight: "1.6" }}>
-                  <li>Built modular web applications using JavaScript, Node.js, and Express.js</li>
-                  <li>Participated in daily stand-ups, sprint planning, and retrospectives following Scrum methodology</li>
-                  <li>Contributed to code reviews and technical documentation, improving productivity by 15%</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div className="morebtn">
-          <Link href="/#experience" className="btn">
-            <i className="fas fa-arrow-left"></i>
-            <span>Back to Home</span>
-          </Link>
-        </div>
-      </section>
-      {/* experience section ends */}
-
-      {/* footer section starts */}
-      <section className="footer">
-        <div className="box-container">
-          <div className="box">
-            <h3>Shybash&apos;s Portfolio</h3>
-            <p>
-              Thank you for visiting my personal portfolio website. Connect with me over socials. <br /> <br /> Keep
-              Rising 🚀.
-            </p>
-          </div>
-
-          <div className="box">
-            <h3>quick links</h3>
-            <Link href="/#home">
-              <i className="fas fa-chevron-circle-right"></i> home
-            </Link>
-            <Link href="/#about">
-              <i className="fas fa-chevron-circle-right"></i> about
-            </Link>
-            <Link href="/#skills">
-              <i className="fas fa-chevron-circle-right"></i> skills
-            </Link>
-            <Link href="/#education">
-              <i className="fas fa-chevron-circle-right"></i> education
-            </Link>
-            <Link href="/#work">
-              <i className="fas fa-chevron-circle-right"></i> work
-            </Link>
-            <Link href="/#experience">
-              <i className="fas fa-chevron-circle-right"></i> experience
-            </Link>
-          </div>
-
-          <div className="box">
-            <h3>contact info</h3>
-            <p>
-              {" "}
-              <i className="fas fa-phone"></i>+91 6302153669
-            </p>
-            <p>
-              {" "}
-              <i className="fas fa-envelope"></i>shybashshaik@gmail.com
-            </p>
-            <p>
-              {" "}
-              <i className="fas fa-map-marked-alt"></i>Hyderabad, Telangana
-            </p>
-            <div className="share">
-              <a href="https://linkedin.com/in/shybashshaik" className="fab fa-linkedin" target="_blank"></a>
-            </div>
-          </div>
-        </div>
-
-        <h1 className="credit">
-          Designed with <i className="fa fa-heart pulse"></i> by{" "}
-          <a href="https://github.com/Shybash">Shaik Shybash</a>
-        </h1>
-      </section>
-      {/* footer section ends */}
-
-      {/* scroll top btn */}
-      <a href="#experience" className="fas fa-angle-up" id="scroll-top"></a>
-    </>
+      <Footer />
+    </div>
   );
 }

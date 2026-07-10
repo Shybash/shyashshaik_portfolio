@@ -60,7 +60,7 @@ export default function Experience() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: idx * 0.1 }}
-                className="bg-[#0a0c24]/30 border border-white/5 p-6 md:p-8 rounded-xl shadow-lg relative overflow-hidden backdrop-blur-md"
+                className="bg-[#0d0d12]/50 border border-white/5 p-6 md:p-8 rounded-xl shadow-lg relative overflow-hidden backdrop-blur-md"
               >
                 
                 {/* Header info */}
@@ -70,7 +70,7 @@ export default function Experience() {
                     <span className="font-mono text-xs text-zinc-400">{exp.company}</span>
                   </div>
                   <div className="flex items-center space-x-2.5">
-                    <span className="font-mono text-[9px] bg-zinc-950/60 border border-white/5 text-zinc-455 px-2.5 py-1 rounded font-bold">
+                    <span className="font-mono text-[9px] bg-zinc-950/60 border border-white/5 text-zinc-400 px-2.5 py-1 rounded font-bold">
                       {exp.period}
                     </span>
                     <span className="font-mono text-[9px] bg-blue-900/20 border border-blue-900/30 text-blue-400 px-2.5 py-1 rounded font-bold uppercase tracking-wider">
@@ -80,11 +80,11 @@ export default function Experience() {
                 </div>
 
                 {/* Bullet Points */}
-                <ul className="space-y-4 font-sans text-sm text-zinc-450">
+                <ul className="space-y-4 font-sans text-sm text-zinc-400">
                   {exp.points.map((pt, i) => (
                     <li key={i} className="flex items-start space-x-3">
-                      <span className="h-1.5 w-1.5 rounded-full bg-blue-450 mt-2 shrink-0 animate-pulse" />
-                      <span className="leading-relaxed text-zinc-350">{pt}</span>
+                      <span className="h-1.5 w-1.5 rounded-full bg-blue-400 mt-2 shrink-0 animate-pulse" />
+                      <span className="leading-relaxed text-zinc-300">{pt}</span>
                     </li>
                   ))}
                 </ul>

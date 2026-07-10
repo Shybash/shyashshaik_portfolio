@@ -17,11 +17,17 @@ export default function Contact() {
 
     setStatus("sending");
 
-    // Simulate sending progress
+    // Build mailto link and redirect
+    const subject = `Portfolio Contact from ${formData.name}`;
+    const body = `Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`;
+
     setTimeout(() => {
+      window.location.href = `mailto:shybashshaik@gmail.com?subject=${encodeURIComponent(
+        subject
+      )}&body=${encodeURIComponent(body)}`;
       setStatus("success");
       setFormData({ name: "", email: "", message: "" });
-    }, 1500);
+    }, 800);
   };
 
   return (
@@ -50,9 +56,9 @@ export default function Contact() {
               <div className="space-y-4 pt-4">
                 <a 
                   href="mailto:shybashshaik@gmail.com" 
-                  className="flex items-center space-x-4 p-4 rounded-lg bg-[#0a0c24]/30 border border-white/5 hover:border-white/20 hover:bg-[#121435]/40 transition-all group backdrop-blur-md"
+                  className="flex items-center space-x-4 p-4 rounded-lg bg-[#0d0d12]/50 border border-white/5 hover:border-white/20 hover:bg-zinc-900/40 transition-all group backdrop-blur-md"
                 >
-                  <div className="p-2.5 rounded bg-zinc-950/60 border border-white/5 text-emerald-450 group-hover:bg-emerald-950/20 group-hover:text-emerald-300 transition-colors">
+                  <div className="p-2.5 rounded bg-zinc-950/60 border border-white/5 text-emerald-400 group-hover:bg-emerald-950/20 group-hover:text-emerald-300 transition-colors">
                     <Mail className="h-5 w-5" />
                   </div>
                   <div className="text-left font-mono text-xs">
@@ -65,9 +71,9 @@ export default function Contact() {
                   href="https://github.com/Shybash" 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="flex items-center space-x-4 p-4 rounded-lg bg-[#0a0c24]/30 border border-white/5 hover:border-white/20 hover:bg-[#121435]/40 transition-all group backdrop-blur-md"
+                  className="flex items-center space-x-4 p-4 rounded-lg bg-[#0d0d12]/50 border border-white/5 hover:border-white/20 hover:bg-zinc-900/40 transition-all group backdrop-blur-md"
                 >
-                  <div className="p-2.5 rounded bg-zinc-950/60 border border-white/5 text-blue-450 group-hover:bg-blue-950/20 group-hover:text-blue-300 transition-colors">
+                  <div className="p-2.5 rounded bg-zinc-950/60 border border-white/5 text-blue-400 group-hover:bg-blue-950/20 group-hover:text-blue-300 transition-colors">
                     <Github className="h-5 w-5" />
                   </div>
                   <div className="text-left font-mono text-xs">
@@ -80,9 +86,9 @@ export default function Contact() {
                   href="https://linkedin.com/in/shybashshaik" 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="flex items-center space-x-4 p-4 rounded-lg bg-[#0a0c24]/30 border border-white/5 hover:border-white/20 hover:bg-[#121435]/40 transition-all group backdrop-blur-md"
+                  className="flex items-center space-x-4 p-4 rounded-lg bg-[#0d0d12]/50 border border-white/5 hover:border-white/20 hover:bg-zinc-900/40 transition-all group backdrop-blur-md"
                 >
-                  <div className="p-2.5 rounded bg-zinc-950/60 border border-white/5 text-purple-450 group-hover:bg-purple-950/20 group-hover:text-purple-300 transition-colors">
+                  <div className="p-2.5 rounded bg-zinc-950/60 border border-white/5 text-purple-400 group-hover:bg-purple-950/20 group-hover:text-purple-300 transition-colors">
                     <Linkedin className="h-5 w-5" />
                   </div>
                   <div className="text-left font-mono text-xs">
@@ -100,13 +106,13 @@ export default function Contact() {
 
           {/* Right: Contact Form */}
           <Tilt className="lg:col-span-7 flex flex-col">
-            <div className="w-full bg-[#0a0c24]/30 border border-white/5 rounded-xl p-6 md:p-8 flex flex-col justify-center shadow-2xl relative overflow-hidden min-h-[350px] backdrop-blur-md h-full">
+            <div className="w-full bg-[#0d0d12]/50 border border-white/5 rounded-xl p-6 md:p-8 flex flex-col justify-center shadow-2xl relative overflow-hidden min-h-[350px] backdrop-blur-md h-full">
               
               {status !== "success" ? (
                 <form onSubmit={handleSubmit} className="space-y-5 text-left">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
                     <div className="space-y-2">
-                      <label className="font-mono text-[10px] text-zinc-550 uppercase font-bold block">Your Name</label>
+                      <label className="font-mono text-[10px] text-zinc-500 uppercase font-bold block">Your Name</label>
                       <input 
                         type="text" 
                         required
@@ -118,7 +124,7 @@ export default function Contact() {
                       />
                     </div>
                     <div className="space-y-2">
-                      <label className="font-mono text-[10px] text-zinc-550 uppercase font-bold block">Your Email</label>
+                      <label className="font-mono text-[10px] text-zinc-500 uppercase font-bold block">Your Email</label>
                       <input 
                         type="email" 
                         required
@@ -132,7 +138,7 @@ export default function Contact() {
                   </div>
 
                   <div className="space-y-2">
-                    <label className="font-mono text-[10px] text-zinc-550 uppercase font-bold block">Your Message</label>
+                    <label className="font-mono text-[10px] text-zinc-500 uppercase font-bold block">Your Message</label>
                     <textarea 
                       required
                       rows={4}
@@ -173,10 +179,10 @@ export default function Contact() {
                   </div>
                   <h4 className="text-lg font-bold text-white mb-2 font-sans">Message Sent Successfully</h4>
                   <p className="text-xs text-zinc-400 max-w-sm leading-relaxed mb-6 font-sans">
-                    Thank you for reaching out! I appreciate you taking the time to write. I will get back to you as soon as possible at the email address you provided.
+                    Thank you for reaching out! Your default email client should have opened with the message pre-filled. I will get back to you as soon as possible.
                   </p>
                   <button 
-                    type="submit"
+                    type="button"
                     onClick={() => setStatus("idle")}
                     className="px-4 py-2 border border-white/10 hover:border-white/20 rounded-lg text-[10px] font-mono text-zinc-300 hover:text-white hover:bg-zinc-900/40 transition-all active:scale-95 cursor-pointer"
                   >

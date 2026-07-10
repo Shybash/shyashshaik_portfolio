@@ -7,10 +7,10 @@ export default function Education() {
   const educations = [
     {
       degree: "Bachelor of Technology in Computer Science & Engineering",
-      institution: "State University College",
-      period: "2021 – 2025",
+      institution: "Keshav Memorial Institute of Technology",
+      period: "2022 – 2025",
       grade: "GPA: 7.9 / 10",
-      icon: <GraduationCap className="h-4.5 w-4.5 text-emerald-450" />,
+      icon: <GraduationCap className="h-4.5 w-4.5 text-emerald-400" />,
       points: [
         "Specialized in Software Engineering, Database Systems, Computer Networks, and Data Structures.",
         "Built course projects including a real-time club registration portal and directories API services.",
@@ -38,7 +38,7 @@ export default function Education() {
         
         {/* Section Header */}
         <div className="flex flex-col space-y-2 mb-16 text-left">
-          <span className="font-mono text-xs text-emerald-450 tracking-widest uppercase">{"// ACADEMIC TIMELINE"}</span>
+          <span className="font-mono text-xs text-emerald-400 tracking-widest uppercase">{"// ACADEMIC TIMELINE"}</span>
           <h2 className="text-3xl md:text-4xl font-extrabold text-white">Education Details</h2>
           <div className="h-1 w-20 bg-emerald-500 rounded-full mt-2" />
         </div>
@@ -59,7 +59,7 @@ export default function Education() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: idx * 0.1 }}
-                className="bg-[#0a0c24]/30 border border-white/5 p-6 md:p-8 rounded-xl shadow-lg relative overflow-hidden backdrop-blur-md"
+                className="bg-[#0d0d12]/50 border border-white/5 p-6 md:p-8 rounded-xl shadow-lg relative overflow-hidden backdrop-blur-md"
               >
                 
                 {/* Header info */}
@@ -69,21 +69,21 @@ export default function Education() {
                     <span className="font-mono text-xs text-zinc-400">{edu.institution}</span>
                   </div>
                   <div className="flex items-center space-x-2.5">
-                    <span className="font-mono text-[9px] bg-zinc-950/60 border border-white/5 text-zinc-455 px-2.5 py-1 rounded font-bold">
+                    <span className="font-mono text-[9px] bg-zinc-950/60 border border-white/5 text-zinc-400 px-2.5 py-1 rounded font-bold">
                       {edu.period}
                     </span>
-                    <span className="font-mono text-[9px] bg-emerald-900/20 border border-emerald-900/30 text-emerald-450 px-2.5 py-1 rounded font-bold uppercase tracking-wider">
+                    <span className="font-mono text-[9px] bg-emerald-900/20 border border-emerald-900/30 text-emerald-400 px-2.5 py-1 rounded font-bold uppercase tracking-wider">
                       {edu.grade}
                     </span>
                   </div>
                 </div>
 
                 {/* Bullet Points */}
-                <ul className="space-y-4 font-sans text-sm text-zinc-455">
+                <ul className="space-y-4 font-sans text-sm text-zinc-400">
                   {edu.points.map((pt, i) => (
                     <li key={i} className="flex items-start space-x-3">
-                      <span className="h-1.5 w-1.5 rounded-full bg-emerald-455 mt-2 shrink-0 animate-pulse" />
-                      <span className="leading-relaxed text-zinc-350">{pt}</span>
+                      <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 mt-2 shrink-0 animate-pulse" />
+                      <span className="leading-relaxed text-zinc-300">{pt}</span>
                     </li>
                   ))}
                 </ul>

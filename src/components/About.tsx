@@ -9,28 +9,28 @@ export default function About() {
 
   const principles = [
     {
-      icon: <Server className="h-5 w-5 text-blue-455" />,
+      icon: <Server className="h-5 w-5 text-indigo-400" />,
       title: "API Design & Optimization",
       desc: "Building clean, RESTful APIs using Node.js and Express. Refactoring routes and middleware to ensure swift response times and clean payload structures.",
       spotlightClass: "spotlight-card-blue"
     },
     {
-      icon: <Cpu className="h-5 w-5 text-purple-400" />,
+      icon: <Cpu className="h-5 w-5 text-indigo-400" />,
       title: "Asynchronous Workflows",
       desc: "Managing queues and background processing with Redis. Offloading intensive execution steps to keep user-facing APIs responsive.",
-      spotlightClass: "spotlight-card-purple"
+      spotlightClass: "spotlight-card-blue"
     },
     {
-      icon: <Database className="h-5 w-5 text-emerald-455" />,
+      icon: <Database className="h-5 w-5 text-indigo-400" />,
       title: "Database Modeling",
       desc: "Designing and optimizing schema structures across MongoDB and SQL databases. Writing clean queries, indexing keys, and implementing caching logic.",
-      spotlightClass: "spotlight-card-emerald"
+      spotlightClass: "spotlight-card-blue"
     },
     {
       icon: <ShieldCheck className="h-5 w-5 text-indigo-400" />,
       title: "Security & Reliability",
       desc: "Integrating secure user authentication (JWT, role-based access), implementing request validations, and managing robust error handling patterns.",
-      spotlightClass: "spotlight-card-purple"
+      spotlightClass: "spotlight-card-blue"
     }
   ];
 
@@ -75,7 +75,7 @@ export default function About() {
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 pt-6">
               {principles.map((p, idx) => (
                 <Tilt key={idx} className="flex flex-col">
-                  <div className={`bg-[#0a0c24]/30 backdrop-blur-md border border-white/5 p-5 rounded-lg flex flex-col space-y-3 shadow-md spotlight-card ${p.spotlightClass} text-left h-full w-full`}>
+                  <div className={`bg-[#0d0d12]/50 backdrop-blur-md border border-white/5 p-5 rounded-lg flex flex-col space-y-3 shadow-md spotlight-card ${p.spotlightClass} text-left h-full w-full`}>
                     <div className="flex items-center space-x-3">
                       <div className="p-2 rounded bg-zinc-950/60 border border-white/5">
                         {p.icon}
@@ -93,11 +93,11 @@ export default function About() {
           <div className="lg:col-span-5 flex flex-col">
             <Tilt className="w-full h-full flex flex-col">
               <div 
-                className="bg-[#0a0c24]/30 backdrop-blur-md border border-white/5 rounded-xl p-6 shadow-xl relative overflow-hidden spotlight-card spotlight-card-blue flex flex-col justify-between h-full min-h-[380px] text-left w-full"
+                className="bg-[#0d0d12]/50 backdrop-blur-md border border-white/5 rounded-xl p-6 shadow-xl relative overflow-hidden spotlight-card spotlight-card-blue flex flex-col justify-between h-full min-h-[380px] text-left w-full"
               >
                 <div className="space-y-6">
                   <div className="flex items-center space-x-2 pb-4 border-b border-white/5">
-                    <User className="h-4.5 w-4.5 text-blue-400" />
+                    <User className="h-4.5 w-4.5 text-indigo-400" />
                     <h3 className="font-mono text-xs text-white font-bold uppercase tracking-wider">Personal Specs</h3>
                   </div>
 
@@ -145,7 +145,7 @@ export default function About() {
                 </div>
 
                 <div className="border-t border-white/5 pt-4 mt-6">
-                  <span className="font-mono text-[10px] text-zinc-550">Node.js // AWS // Databases</span>
+                  <span className="font-mono text-[10px] text-zinc-500">Node.js // AWS // Databases</span>
                 </div>
               </div>
             </Tilt>

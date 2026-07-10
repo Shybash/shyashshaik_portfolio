@@ -33,7 +33,7 @@ export default function Skills() {
       label: "Route Architecture",
       desc: "Structuring clean endpoints, middleware integrations, JWT auth, and RBAC filters.",
       icon: <ExpressIcon className="w-10 h-10 shrink-0" />,
-      spotlightClass: "spotlight-card-sky"
+      spotlightClass: "spotlight-card-blue"
     },
     {
       name: "MongoDB",
@@ -41,7 +41,7 @@ export default function Skills() {
       label: "NoSQL Document Store",
       desc: "Designing flexible schemas, aggregating collections, and optimizing query indexing.",
       icon: <MongodbIcon className="w-10 h-10 shrink-0" />,
-      spotlightClass: "spotlight-card-emerald"
+      spotlightClass: "spotlight-card-blue"
     },
     {
       name: "PostgreSQL",
@@ -57,7 +57,7 @@ export default function Skills() {
       label: "In-Memory Hub",
       desc: "Offloading intensive tasks, scheduling queues, and managing fast token cache layers.",
       icon: <RedisIcon className="w-10 h-10 shrink-0" />,
-      spotlightClass: "spotlight-card-pink"
+      spotlightClass: "spotlight-card-blue"
     },
     {
       name: "Docker",
@@ -65,7 +65,7 @@ export default function Skills() {
       label: "Isolated Environments",
       desc: "Standardizing environments across development, testing, and production stages.",
       icon: <DockerIcon className="w-10 h-10 shrink-0" />,
-      spotlightClass: "spotlight-card-sky"
+      spotlightClass: "spotlight-card-blue"
     },
     {
       name: "AWS",
@@ -73,7 +73,7 @@ export default function Skills() {
       label: "Amazon Web Services",
       desc: "Operating within ECS Fargate, S3 storage buckets, and CloudFront CDN paths.",
       icon: <AwsIcon className="w-10 h-10 shrink-0" />,
-      spotlightClass: "spotlight-card-purple"
+      spotlightClass: "spotlight-card-blue"
     },
     {
       name: "GitHub",
@@ -81,7 +81,7 @@ export default function Skills() {
       label: "Git & Actions",
       desc: "Coordinating branch merges, review flows, and automated deployment integrations.",
       icon: <GithubIcon className="w-10 h-10 shrink-0" />,
-      spotlightClass: "spotlight-card-purple"
+      spotlightClass: "spotlight-card-blue"
     },
     {
       name: "TypeScript",
@@ -97,7 +97,7 @@ export default function Skills() {
       label: "Bidirectional Sync",
       desc: "Constructing persistent connection sockets and real-time data events.",
       icon: <WebsocketsIcon className="w-10 h-10 shrink-0" />,
-      spotlightClass: "spotlight-card-pink"
+      spotlightClass: "spotlight-card-blue"
     },
     {
       name: "React.js",
@@ -105,7 +105,7 @@ export default function Skills() {
       label: "UI Library",
       desc: "Composing reusable component matrices, custom hooks, and layout shells.",
       icon: <ReactIcon className="w-10 h-10 shrink-0" />,
-      spotlightClass: "spotlight-card-teal"
+      spotlightClass: "spotlight-card-blue"
     },
     {
       name: "Next.js",
@@ -113,7 +113,7 @@ export default function Skills() {
       label: "Server Framework",
       desc: "Architecting lightning-fast web pages, API routes, and Tailwind layouts.",
       icon: <NextjsIcon className="w-10 h-10 shrink-0" />,
-      spotlightClass: "spotlight-card-teal"
+      spotlightClass: "spotlight-card-blue"
     }
   ];
 
@@ -135,7 +135,7 @@ export default function Skills() {
           {skillsData.map((skill, idx) => (
             <Tilt 
               key={idx} 
-              className={`bg-[#0a0c24]/30 border border-white/5 rounded-xl p-5 backdrop-blur-md spotlight-card ${skill.spotlightClass} flex flex-col justify-between h-[230px]`}
+              className={`bg-[#0d0d12]/50 border border-white/5 rounded-xl p-5 backdrop-blur-md spotlight-card ${skill.spotlightClass} flex flex-col justify-between h-[230px]`}
             >
               <div>
                 {/* Header: Icon + Badge */}
